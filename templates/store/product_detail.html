@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ product.name }}</title>
+    <link href="{% static 'bootstrap-5.3.3-dist/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+</head>
+<body>
+    <header class="">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="/">Meow shop</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="/">Trang chủ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="/products">Sản phẩm</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="/about">Về chúng tôi</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="/contact">Liên hệ</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container my-5">
+        <h1 class="text-center">{{ product.name }}</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <img src="{{ product.image_url }}" class="img-fluid" alt="{{ product.name }}">
+            </div>
+            <div class="col-md-6">
+                <h2>Giá: {{ product.price }} VND</h2>
+                <p>{{ product.description }}</p>
+                <a href="#" class="btn btn-primary">Mua ngay</a>
+                <a href="{% url 'store' %}" class="btn btn-secondary">Về cửa hàng</a>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'bootstrap-5.3.3-dist/js/bootstrap.min.js' %}"></script>
+</body>
+</html>

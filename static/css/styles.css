@@ -1,0 +1,102 @@
+header {
+    background-color: #ee4d2d;
+}
+
+body {
+    background-color: #ffffff ;
+}
+
+.carousel-indicators {
+    gap: 3px;
+    padding-bottom: 10px;
+}
+
+/* Carousel Indicators */
+.carousel-indicators button {
+    width: 30px;
+    height: 6px;
+    background-color:  #f76e53af;
+    border: 0px solid #000000; /* Blue border */
+    border-radius: 10px;
+    opacity: 0.6; /* Slightly transparent */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.carousel-indicators .active {
+    background-color:  #ee4d2d; /* Blue for active indicator */
+    opacity: 1; /* Fully opaque */
+    transform: scale(1.3); /* Slightly larger for active */
+}
+
+/* Carousel Navigation Buttons */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 100px;
+    height: 100px;
+    background-color: rgba(0, 1, 0, 0.5); /* Semi-transparent black */
+    border-radius: 50%; /* Circle buttons */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%);
+    z-index: 10;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Darker on hover */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(100%);
+    width: 20px;
+    height: 20px;
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-height: 70px;
+    transition: 0.3s;
+}
+
+.card:hover,
+.card:focus{
+    transform: scale(1.1);
+    box-shadow: 10px 10px 10px;
+}
+
+.card-title {
+    color: black;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Show 3 lines, adjust the number as needed */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-text{
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Show 3 lines, adjust the number as needed */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.card-body {
+    font-size: 1.1rem;
+}
+
+.card a.btn{
+    background-color: #ee4d2d;
+    border-color: #ee4d2d;
+    color: white;
+}
+
