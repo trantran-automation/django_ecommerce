@@ -1,4 +1,5 @@
 {% load static %}
+{% load humanize %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,17 +24,32 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="/">Trang chủ</a>
+                            <a href="{% url 'product_create' %}" class="nav-link text-white" href="/">Bày bán</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="/products">Sản phẩm</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="/about">Về chúng tôi</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="/contact">Liên hệ</a>
-                        </li>
+                        {% if user.is_authenticated %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="/cart/">Giỏ hàng của bạn</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link">{{ user.username }}!</a>
+                            </li>
+                            <li class="nav-item">
+                                <img src="{{ user.profile_image.url }}" alt="Profile" class="profile-image">
+                            </li>
+                            <li class="nav-item">
+                                <form method="post" action="{% url 'logout' %}" style="display: inline;">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn text-white">Đăng xuất</button>
+                                </form>
+                            </li>
+                        {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'login' %}">Đăng nhập</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'signup' %}">Đăng ký</a>
+                            </li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>
@@ -78,12 +94,13 @@
                 <div class="col-4 mb-4">
                     <a href="{% url 'product_detail' product.id %}" class="card-link">
                         <div class="card">
-                            <img src="{{ product.image_url }}" class="card-img-top" alt="{{ product.name }}">
+                            <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
                             <div class="card-body">
                                 <h5 class="card-title">{{ product.name }}</h5>
                                 <p class="card-text">{{ product.description }}</p>
-                                <p class="card-text"><strong>{{ product.price }} VND</strong></p>
-                                <a href="#" class="btn">Mua ngay</a>
+                                <p class="card-text"><strong>{{ product.price|floatformat:0|intcomma }} VND</strong></p>
+                                <p class="card-text"><strong>Shop: {{product.seller}}</strong></p>
+                                <a href="{% url 'add_to_cart' product.id %}" class="btn">Mua ngay</a>
                             </div>
                         </div>
                     </a>

@@ -1,0 +1,98 @@
+:root {
+    --shoppe-orange:#ee4d2d;    
+}
+
+/* General styling for the body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #495057;
+    margin: 0;
+    padding: 0;
+}
+
+.alert-header{
+    position:absolute;
+    top: 0px;
+    left: 50%;
+    transform:translateX(-50%);
+    width: 75vw;
+}
+
+/* Container for the form */
+.container {
+    max-width: 800px;
+    margin-top: 50px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Header for the page */
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--shoppe-orange);
+}
+
+/* Style for form-group */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Labels for form fields */
+label {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Input fields */
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+/* Make the input fields larger and more visually appealing */
+input[type="text"], input[type="number"], input[type="file"], textarea {
+    height: 40px;
+}
+
+/* Custom textarea for better visibility */
+textarea {
+    resize: vertical;
+}
+
+/* Error messages styling */
+.text-danger {
+    color: #b30f00;
+    font-size: 14px;
+}
+
+/* Button styling */
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--shoppe-orange);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--shoppe-orange);
+}
+
+/* Hover effect for inputs */
+input[type="text"]:hover, input[type="number"]:hover, textarea:hover, select:hover {
+    border-color: var(--shoppe-orange);
+}
+
+

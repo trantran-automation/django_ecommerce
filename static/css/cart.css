@@ -1,0 +1,57 @@
+:root {
+    --shoppe-orange:#ee4d2d;    
+}
+
+body {
+    background-color: #f8f9fa; /* Light grey background for the page */
+}
+
+h1 {
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    color: var(--shoppe-orange);
+}
+
+.quantity-input {
+    width: 60px;
+    text-align: center;
+}
+.btn-sm {
+    padding: 0.25rem 0.5rem;
+}
+
+.cart-product-img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.quantity-input {
+    max-width: 80px;
+    text-align: center;
+}
+
+.table thead th {
+    text-align: center;
+    vertical-align: middle;
+    background: #f0f8ff; /* Soft blue background for headers */
+}
+
+.table tbody td {
+    text-align: center;
+}
+
+.cart-summary {
+    background-color: #e9f7f9; /* Subtle teal background for total */
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cart-summary h3 {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.5rem;
+    color: #155724;
+}

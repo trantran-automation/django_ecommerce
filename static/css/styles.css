@@ -1,11 +1,25 @@
+:root {
+    --shoppe-orange:#ee4d2d;    
+}
+
 header {
-    background-color: #ee4d2d;
+    background-color: var(--shoppe-orange);
 }
 
 body {
     background-color: #ffffff ;
 }
 
+.nav-item,
+.nav-link {
+    color: white;
+}
+
+.profile-image{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+}
 .carousel-indicators {
     gap: 3px;
     padding-bottom: 10px;
@@ -23,7 +37,7 @@ body {
 }
 
 .carousel-indicators .active {
-    background-color:  #ee4d2d; /* Blue for active indicator */
+    background-color:  var(--shoppe-orange); /* Blue for active indicator */
     opacity: 1; /* Fully opaque */
     transform: scale(1.3); /* Slightly larger for active */
 }
@@ -95,8 +109,8 @@ body {
 }
 
 .card a.btn{
-    background-color: #ee4d2d;
-    border-color: #ee4d2d;
+    background-color: var(--shoppe-orange);
+    border-color: var(--shoppe-orange);
     color: white;
 }
 

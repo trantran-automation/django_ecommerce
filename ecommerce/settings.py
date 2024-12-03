@@ -38,7 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
+    'users',
     'products',
+    'cart',
+    'orders',
 ]
 
 MIDDLEWARE = [
@@ -85,6 +89,8 @@ DATABASES = {
 }
 
 
+AUTH_USER_MODEL = 'users.User'
+LOGIN_REDIRECT_URL = '/'
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
 
